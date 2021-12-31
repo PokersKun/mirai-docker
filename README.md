@@ -48,7 +48,7 @@ version: "1"
 
 services:
   mirai:
-    image: pocketfan233/mah
+    image: pocketfan233/mirai
     container_name: mirai
     stdin_open: true
     tty: true
