@@ -38,7 +38,7 @@ docker run \
     -v "$PWD"/plugins:/app/plugins \
     -v "$PWD"/extras:/app/extras \
     -it \
-    pocketfan233/mirai
+    pocketfan233/mirai-python
 ```
 
 ### 使用 Docker Compose 运行
@@ -50,7 +50,7 @@ version: "1"
 
 services:
   mirai:
-    image: pocketfan233/mirai
+    image: pocketfan233/mirai-python
     container_name: mirai
     stdin_open: true
     tty: true
