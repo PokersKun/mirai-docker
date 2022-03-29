@@ -1,6 +1,6 @@
-# Dockerfile for chat-command v1
+# Dockerfile for chat-command v1 with Python3
 
-[Mirai](https://github.com/mamoe/mirai) 与 [chat-command](https://github.com/project-mirai/chat-command) 的 Dockerfile
+[Mirai](https://github.com/mamoe/mirai) 与 [chat-command](https://github.com/project-mirai/chat-command) 以及 Python3 环境的 Dockerfile
 
 使用了 [Eclipse OpenJ9 JVM](https://www.eclipse.org/openj9/) 以减少内存占用。
 
@@ -22,6 +22,7 @@ mkdir mirai/bots
 mkdir mirai/config
 mkdir mirai/data
 mkdir mirai/plugins
+mkdir mirai/extras
 ```
 
 ### 使用 Docker 运行
@@ -35,6 +36,7 @@ docker run \
     -v "$PWD"/config:/app/config \
     -v "$PWD"/data:/app/data \
     -v "$PWD"/plugins:/app/plugins \
+    -v "$PWD"/extras:/app/extras \
     -it \
     pocketfan233/mirai
 ```
@@ -57,6 +59,7 @@ services:
       - ./config:/app/config
       - ./data:/app/data
       - ./plugins:/app/plugins
+      - ./extras:/app/extras
 ```
 
 随后使用 `docker-compose up -d` 运行。
