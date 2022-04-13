@@ -3,8 +3,7 @@
 [Mirai](https://github.com/mamoe/mirai) 定制化环境的 Dockerfile，包含的组件如下：
 
 * chat-command
-* mirai-http-api
-* Python 3
+* python3
 * ffmpeg
 
 使用了 [Eclipse OpenJ9 JVM](https://www.eclipse.org/openj9/) 以减少内存占用。
