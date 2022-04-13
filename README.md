@@ -42,6 +42,7 @@ docker run \
     -v "$PWD"/data:/app/data \
     -v "$PWD"/plugins:/app/plugins \
     -v "$PWD"/extras:/app/extras \
+    -p 8080:8080 \
     -it \
     pocketfan233/mirai
 ```
@@ -51,7 +52,7 @@ docker run \
 将以下内容保存到 `mirai/docker-compose.yml` 文件中：
 
 ```yml
-version: "1"
+version: "3"
 
 services:
   mirai:
@@ -65,6 +66,8 @@ services:
       - ./data:/app/data
       - ./plugins:/app/plugins
       - ./extras:/app/extras
+    ports:
+      - "8080:8080"
 ```
 
 随后使用 `docker-compose up -d` 运行。
