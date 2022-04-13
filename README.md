@@ -1,6 +1,11 @@
-# Dockerfile for chat-command v1 with Python3
+# Dockerfile for mirai v2
 
-[Mirai](https://github.com/mamoe/mirai) 与 [chat-command](https://github.com/project-mirai/chat-command) 以及 Python3 环境的 Dockerfile
+[Mirai](https://github.com/mamoe/mirai) 定制化环境的 Dockerfile，包含的组件如下：
+
+* chat-command
+* mirai-http-api
+* Python 3
+* ffmpeg
 
 使用了 [Eclipse OpenJ9 JVM](https://www.eclipse.org/openj9/) 以减少内存占用。
 
@@ -8,7 +13,7 @@
 
 ### 目录准备
 
-Mirai 将登录信息，还有 Mirai 与 chat-command 的配置文件，保存在 `bots` 与 `config` 文件夹中。
+Mirai 将登录信息的配置文件保存在 `bots` 与 `config` 文件夹中。
 
 在镜像中，这两个文件夹分别位于 `/app/bots` 与 `/app/config` 中。
 
@@ -38,7 +43,7 @@ docker run \
     -v "$PWD"/plugins:/app/plugins \
     -v "$PWD"/extras:/app/extras \
     -it \
-    pocketfan233/mirai-python
+    pocketfan233/mirai
 ```
 
 ### 使用 Docker Compose 运行
@@ -50,7 +55,7 @@ version: "1"
 
 services:
   mirai:
-    image: pocketfan233/mirai-python
+    image: pocketfan233/mirai
     container_name: mirai
     stdin_open: true
     tty: true
