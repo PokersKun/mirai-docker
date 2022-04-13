@@ -1,4 +1,5 @@
 FROM adoptopenjdk/openjdk11-openj9:alpine-jre
+EXPOSE 8080
 WORKDIR /app
 RUN echo "http://mirrors.aliyun.com/alpine/v3.6/main" > /etc/apk/repositories \
     && echo "http://mirrors.aliyun.com/alpine/v3.6/community" >> /etc/apk/repositories \
