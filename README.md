@@ -5,7 +5,6 @@
 * chat-command
 * python3
 * ffmpeg
-* libavcodec-extra
 
 使用了 [Eclipse OpenJ9 JVM](https://www.eclipse.org/openj9/) 以减少内存占用。
 
